@@ -1,0 +1,24 @@
+{
+     "pages": [
+          "pages/index/index",
+          "pages/course/course",
+          "pages/gohockey/gohockey",
+          "pages/mine/mine",
+          "pages/logs/logs",
+          "pages/find_detail/find_detail",
+          "pages/course_detail/course_detail",
+          "pages/coach_intro/coach_intro",
+          "pages/recharge/select/select",
+          "pages/recharge/success/success",
+          "pages/signup/signup",
+          "pages/pay/success/success",
+          "pages/url/url",
+          "pages/recharge/ad/ad"
+     ],
+     "window": {
+          "backgroundTextStyle": "light",
+          "navigationBarBackgroundColor": "#fff",
+          "navigationBarTitleText": "GoHockey",
+          "navigationBarTextStyle": "black"
+     }
+}

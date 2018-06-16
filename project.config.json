@@ -1,0 +1,62 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.94",
+	"appid": "wx579dfd7e106c2f50",
+	"projectname": "gohockeyxiaochengxu",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "ad",
+					"pathName": "pages/recharge/ad/ad",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "select",
+					"pathName": "pages/recharge/select/select",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/course_detail/course_detail",
+					"query": "id=28&timeid=45&date=2018-06-01&over="
+				},
+				{
+					"id": -1,
+					"name": "course",
+					"pathName": "pages/course/course",
+					"query": "id=28&timeid=45&date=2018-06-01&over="
+				}
+			]
+		}
+	}
+}
