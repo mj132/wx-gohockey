@@ -1,0 +1,139 @@
+<!--pages/signup/signup.wxml-->
+
+<view class='signup'>
+  <view class='sign_title clearfix'>
+    <image src='http://cdn.xiaochengxu.gogohockey.com/img/img_pay.png' class='fl'></image>
+    <view class='tit fl'>
+      <view class='t' wx:if="{{language}}">课程</view>
+      <view class='t' wx:else>Course</view>
+      <view class='b' wx:if="{{language}}">{{course.title}}</view>
+      <view class='b' wx:else>{{course.en_title}}</view>
+    </view>
+  </view>
+
+  <form bindsubmit="formSubmit" report-submit="true">
+    <view class='form'>
+        <view class='name clearfix' wx:if="{{language}}">
+          <text class='fl'>姓名</text><input type='text' value='{{name}}' name="name" placeholder='请输入真实姓名' class='fl input' placeholder-style="color: #CBD2D9;"></input>
+        </view>
+        <view class='name clearfix' wx:else>
+          <text class='fl'>Name</text><input type='text' value='{{name}}' name="name" placeholder='please enter your real name' class='fl input' placeholder-style="color: #CBD2D9;"></input>
+        </view>
+
+        <view class='sex clearfix' wx:if="{{language}}">
+          <text class='fl'>性别</text>
+          <radio-group name="gender" class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{sexs}}" wx:key="">
+              <radio value="{{item.id}}" checked="{{gender == item.id? true:false}}"/>{{item.name}}
+            </label>
+          </radio-group>
+        </view>
+        <view class='sex clearfix' wx:else>
+          <text class='fl'>Gender</text>
+          <radio-group name="gender" class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{sexs}}" wx:key="">
+              <radio value="{{item.id}}" checked="{{gender == item.id? true:false}}"/>{{item.en_name}}
+            </label>
+          </radio-group>
+        </view>
+
+        <view class='tel clearfix' wx:if="{{language}}">
+          <text class='fl'>手机</text><input value='{{mobile}}' placeholder='请输入手机号' placeholder-style="color: #CBD2D9;"  name="mobile" type='text' maxlength='11' class='fl input'></input>
+        </view>
+        <view class='tel clearfix' wx:else>
+          <text class='fl'>Mobile</text><input value='{{mobile}}' placeholder='Please input your phone no' placeholder-style="color: #CBD2D9;"  name="mobile" type='text' maxlength='11' class='fl input'></input>
+        </view>
+        <view class='tel clearfix' wx:if="{{language}}">
+          <text class='fl'>身份证</text><input value='{{card}}' name="card" maxlength='18' placeholder='用于购买保险用' placeholder-style="color: #CBD2D9;" type='text' class='fl input'></input>
+        </view>
+        <view class='tel clearfix' wx:else>
+          <text class='fl'>Passport</text><input value='{{passport}}'  name="passport" maxlength='9' placeholder='Used to purchase insurance' placeholder-style="color: #CBD2D9;" type='text' class='fl input'></input>
+        </view>
+
+        <view class='protector clearfix'>
+          <text class='fl' wx:if="{{language}}">是否需要护具  </text>
+          <text class='fl' wx:else>Whether need protective gear </text>
+          <view class='icon fr {{toggle? "" : "tog"}}' bindtap='toggleneed'></view>
+        </view>
+
+        <view class='toggle' wx:if="{{toggle}}">
+          <view class='need'>
+            <view class='select clearfix'>
+              <view class='height fl clearfix' wx:if="{{language}}">
+                <view class='fl'>身高</view> 
+                <picker class='fl' bindchange="heightChange" value="{{hindex}}" range="{{height}}">
+                  <view class="picker">
+                    {{height[hindex]}}
+                  </view>
+                  <view class='trangle'></view>
+                </picker> 
+              
+              </view>
+              <view class='height fl clearfix' wx:else>
+                <view class='fl'>Height</view> 
+                <picker class='fl' bindchange="heightChange" value="{{hindex}}" range="{{height}}">
+                  <view class="picker">
+                    {{height[hindex]}}
+                  </view>
+                  <view class='trangle'></view>
+                </picker> 
+              </view>
+
+              <view class='weight fl clearfix' wx:if="{{language}}">
+                <view class='fl'>体重</view> 
+                <picker class='fl' bindchange="weightChange" value="{{windex}}" range="{{weight}}">
+                  <view class="picker">
+                    {{weight[windex]}}
+                  </view>
+                  <view class='trangle'></view>
+                </picker> 
+              </view>
+              <view class='weight fl clearfix' wx:else>
+                <view class='fl'>Weight</view> 
+                <picker class='fl' bindchange="weightChange" value="{{windex}}" range="{{weight}}">
+                  <view class="picker">
+                    {{weight[windex]}}
+                  </view>
+                  <view class='trangle'></view>
+                </picker> 
+              </view>
+
+              <view class='size fl clearfix' wx:if="{{language}}">
+                <view class='fl'>鞋码</view> 
+                <picker class='fl' bindchange="sizeChange" value="{{sindex}}" range="{{shoesize}}">
+                  <view class="picker">
+                    {{shoesize[sindex]}}
+                  </view>
+                  <view class='trangle'></view>
+                </picker> 
+              </view>
+              <view class='size fl clearfix' wx:else>
+                <view class='fl'>Shoe Size</view> 
+                <picker class='fl' bindchange="sizeChange" value="{{sindex}}" range="{{shoesize}}">
+                  <view class="picker">
+                    {{shoesize[sindex]}}
+                  </view>
+                  <view class='trangle'></view>
+                </picker> 
+              </view>
+            </view>
+          </view>
+          <textarea class='remark' value="{{remark}}"  name="remark" placeholder='备注' placeholder-style="color: #CBD2D9;" wx:if="{{language}}"></textarea>
+          <textarea class='remark' value="{{remark}}"  name="remark" placeholder='Note' placeholder-style="color: #CBD2D9;" wx:else></textarea>
+        </view>
+        
+
+        <view class='submit'>
+          <view class='read' wx:if="{{language}}">
+            <view class='true {{read? "read":""}}' bindtap='togread'></view><text>我已阅读该课程</text><text class='safe' bindtap='pop'>安全协议</text>
+          </view>
+          <view class='read' wx:else>
+            <view class='true {{read? "read":""}}' bindtap='togread'></view><text>I have read this course</text><text class='safe' bindtap='pop'>Security Protocol</text>
+          </view>
+          <button formType='submit' wx:if="{{language}}">提交并支付</button>
+          <button formType='submit' wx:else>Submit And Pay</button>
+        </view>
+
+    </view>
+  </form>
+</view>

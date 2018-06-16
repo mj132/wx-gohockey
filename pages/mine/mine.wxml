@@ -1,0 +1,96 @@
+<!--pages/mine/mine.wxml-->
+<import src="../../template/bottom.wxml" />
+<wxs module="filters" src="./mine.wxs"></wxs>
+
+<view class='mine'>
+  <!-- 上面用户信息 -->
+  <view class='top_user'>
+    <view class='user_head'>
+      <image src="{{api + auth.image}}" background-size="cover" class='userimg'  bindtap='gomine'></image>
+      <view class='square'><view class='row' wx:for="{{4}}" wx:key=""></view><view class='col' wx:for='{{4}}' wx:key=""></view></view>
+    </view>
+    <view class='username'>{{userInfo.nickName}}</view>
+  </view>
+
+  <!-- topbar -->
+  <view class='topbar clearfix'>
+    <view class="course {{nav==1?'active':''}} fl" bindtap='change_course' data-type='1' wx:if="{{language}}">约课</view>
+    <view class="course {{nav==1?'active':''}} fl" bindtap='change_course' data-type='1' wx:else>Courses</view>
+    <view class="ranking fl {{nav==2?'active':''}}" bindtap='change_ranking' data-type='2' wx:if="{{language}}">排行</view>
+    <view class="ranking fl {{nav==2?'active':''}}" bindtap='change_ranking' data-type='2' wx:else>Ranking</view>
+    <view class="balance {{nav==3?'active':''}} fl" bindtap='change_balance' data-type='3' wx:if="{{language}}">账户</view>
+    <view class="balance {{nav==3?'active':''}} fl" bindtap='change_balance' data-type='3' wx:else>Balance</view>
+  </view>
+  <view class='bar_line'></view>
+
+  <!-- 约课 -->
+  <block wx:if="{{nav == 1}}">
+    <!-- 已报名课程 -->
+    <view class='course_reg {{isiphx? "iphx2":""}}' id='mine_bottom'  bindtouchstart='tstart' bindtouchend='tend'>
+      <view class='course' wx:for="{{booking_list}}" wx:key="" wx:if="{{booking_list&&index<6}}">
+        <view class='time'>{{item.book_date}} {{item.book_time}}</view>
+        <view class='course_title bold' wx:if="{{language}}">{{item.course.title}}</view>
+        <view class='course_title bold' wx:else>{{item.course.en_title}}</view>
+        <view class='coach'>
+          <text class='coach_name' wx:if="{{language}}">{{item.course.space_name}}</text>
+          <text class='coach_name' wx:else>{{item.course.space_en_name}}</text>
+          <text class='coach_num'>{{item.book_count}}/{{item.book_limit}}</text>
+        </view>
+        <view class='btn_list' wx:if="{{item.is_finish}}">
+          <view class='pub finish' wx:if="{{language}}">已完成</view>
+          <view class='pub finish' wx:else>Finished</view>
+        </view>
+        <view class='btn_list clearfix' wx:else>
+          <view class='whether fl {{item.expire? "":"pub"}}' wx:if="{{language}}">未完成</view>
+          <view class='whether fl {{item.expire? "":"pub"}}' wx:else>Unfinished</view>
+          <view class='whether fl cancel' bindtap='cancelCourse' data-id='{{item.id}}' wx:if="{{language}}" style='display: {{item.expire? "block":"none"}}'>取消</view>
+          <view class='whether fl cancel' bindtap='cancelCourse' data-id='{{item.id}}' wx:else style='display: {{item.expire? "block":"none"}}'>Cancel</view>
+        </view>
+      </view>
+      
+    </view>
+  </block>
+
+  <!-- 排行 -->
+  <block wx:if="{{nav == 2}}">
+    <view class='rank {{isiphx? "iphx2":""}}' id='mine_bottom'  bindtouchstart='tstart' bindtouchend='tend'>
+      <view class='rank_list' wx:for="{{rank_list}}" wx:key="" wx:if="{{rank_list&&index<10}}">
+        <progress wx:if="{{index < 3}}" class='rank_progress' percent="{{item.count/basecount*100}}" stroke-width="10" activeColor="#2984FF" backgroundColor="#C7E4FF" />
+        <progress wx:else class='rank_progress' percent="{{item.count/basecount*100}}" stroke-width="10" activeColor="#50638F" backgroundColor="#C7E4FF" />
+        <view class='rank_user clearfix'>
+          <text class='user_id'>{{index+1}}</text>
+          <image src="http://cdn.xiaochengxu.gogohockey.com{{item.image}}" background-size="cover" class='userimg'></image>
+          <text class='username'>{{item.username}}</text>
+          <text class='user_finish fr' wx:if="{{language}}">{{item.count}}课时</text>
+          <text class='user_finish fr' wx:else>{{item.count}} class hours</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 余额 -->
+  <block wx:if="{{nav == 3}}">
+    <view class='balance_p {{isiphx? "iphx2":""}}' id='mine_bottom' bindtouchstart='tstart' bindtouchend='tend'>
+      <view class='balance_account clearfix'>
+        <view class='account fl'>
+          <text wx:if="{{language}}">当前剩余次数</text>
+          <text wx:else>Remaining Times</text>
+          <view class='acc_re' wx:if="{{language}}">{{balance}} 次</view>
+          <view class='acc_re' wx:if="{{!language}}">{{balance}} Times</view>
+        </view>
+        <view class='pay fl' wx:if="{{language}}" bindtap='gorecharge'>充值</view>
+        <view class='pay fl' wx:else bindtap='gorecharge'>Recharge</view>
+      </view>
+      <view class='balance_log'>
+        <view class='log clearfix' wx:for="{{consume_list}}" wx:key="" wx:if='{{consume_list&&index<6}}'>
+          <text class='log_left fl' wx:if="{{language}}">{{item.ctime}}</text>
+          <text class='log_left fl' wx:else>{{item.ctime}}</text>
+          <text class='log_right fr'  wx:if="{{language}}">{{filters.toFix(item.content,0)}}次</text>
+          <text class='log_right fr' wx:else>{{item.content}} times</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<template is="bottom" data="{{data:'mine',language: language,isiphx: isiphx}}" />

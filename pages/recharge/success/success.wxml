@@ -1,0 +1,22 @@
+<!--pages/recharge/success/success.wxml-->
+
+<view class='recharge'>
+  <view class='sign_title clearfix'>
+    <image src='http://cdn.xiaochengxu.gogohockey.com/img/img_pay.png' class='fl'></image>
+    <view class='tit fl'>
+      <view class='t' wx:if="{{language}}">充值成功</view>
+      <view class='t' wx:else>Recharge success</view>
+      <view class='b' wx:if="{{language}}">{{userInfo.nickName}} 咱们赛场上见！</view>
+      <view class='b' wx:else>{{userInfo.nickName}} Let's meet on the court!</view>
+    </view>
+  </view>
+  <view class='text'>
+    <view wx:if="{{language}}">充值成功，Let's GoHockey</view>
+    <view wx:else>Recharge successful,Let's GoHockey.</view>
+    <view wx:if="{{language}}">快去选择喜欢的课程。</view>
+    <view wx:else>Go and choose your favorite course.</view>
+  </view>
+</view>
+
+<button wx:if="{{language}}" bindtap='gocourse'>一言为定</button>
+<button wx:else bindtap='gocourse'>It's a date</button>

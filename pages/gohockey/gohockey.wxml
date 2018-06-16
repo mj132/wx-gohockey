@@ -1,0 +1,60 @@
+<!--pages/gohockey/gohockey.wxml-->
+<import src="../../template/bottom.wxml" />
+<import src="../../wxParse/wxParse.wxml" /> 
+
+<view class='gohockey'>
+
+  <!-- logo -->
+  <view class='go_logo'>
+    <image src='http://cdn.xiaochengxu.gogohockey.com/img/img_logo_gohockey.png'></image>
+  </view>
+
+  <!-- 轮播 -->
+  <swiper class='swiper' indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular='true' indicator-color="#C7E4FF" indicator-active-color="#2984FF">
+    <block wx:for="{{slide_image}}" wx:key="">
+      <!-- <swiper-item bindtap='gofind_detail' data-id='{{item.url}}'>
+        <image src="http://cdn.xiaochengxu.gogohockey.com{{item.image}}" class="slide_img" mode='aspectFill' style='width: 686rpx;height: 300rpx;border-radius: 10rpx;'/>
+      </swiper-item> -->
+      <swiper-item bindtap='gourl'  data-id='{{item.url}}'>
+        <image src="http://cdn.xiaochengxu.gogohockey.com{{item.image}}" class="slide_img" mode='aspectFill' style='width: 686rpx;height: 300rpx;border-radius: 10rpx;'/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 教练信息 -->
+  <view class='coach'>
+    <view class='coach_title'>
+      <view wx:if="{{language}}"><view class='rectangle'></view><text class='bold'>教练阵容</text></view>
+      <view wx:else><view class='rectangle'></view><text>Coach Lineup</text></view>
+    </view>
+    <view class='coach_cont'>
+      <scroll-view scroll-x="true" class='coach_scroll'>
+        <view class="coach_list" wx:for="{{coach}}" wx:key="">
+          <image src='http://cdn.xiaochengxu.gogohockey.com{{item.image}}' bindtap='gocoach_intro' data-id="{{item.id}}"></image>
+          <view class="coach_line"></view>
+          <view class='coach_name' wx:if="{{language}}"  bindtap='gocoach_intro' data-id="{{item.id}}">{{item.title}}</view>
+          <view class='coach_name' wx:else  bindtap='gocoach_intro' data-id="{{item.id}}">{{item.en_title}}</view>
+           <view class='coach_des' wx:if="{{language}}">{{item.achievement}}</view>
+          <view class='coach_des' wx:else>{{item.en_achievement}}</view> 
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 发现 -->
+  <view class='find  {{isiphx? "findx":""}}'>
+    <view class='find_title'>
+      <view wx:if="{{language}}"><view class='rectangle'></view><text class='bold'>发现</text></view>
+      <view wx:else><view class='rectangle'></view><text>Explore</text></view>
+    </view>
+    <view class='find_cont'>
+      <view class='find_list' wx:for="{{find_image}}" wx:key="">
+        <view bindtap='gofind_detail' data-id="{{item.id}}"><image src='http://cdn.xiaochengxu.gogohockey.com/{{item.image}}' mode='widthFix'></image></view>
+        <view bindtap='gofind_detail' data-id="{{item.id}}" class='list_title' wx:if="{{language}}">{{item.title}}</view>
+        <view bindtap='gofind_detail' data-id="{{item.id}}" class='list_title' wx:else>{{item.en_title}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<template is="bottom" data="{{data:'gohockey',language: language,isiphx: isiphx}}" />

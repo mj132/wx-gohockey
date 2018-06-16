@@ -1,0 +1,40 @@
+<!--index.wxml-->
+    <include wx:if='{{auth && !auth.mobile}}' src="../../template/shade.wxml" />          
+
+<!-- 上面用户信息 -->
+<view class="top_info">
+  <button class='btn' wx:if="{{!auth}}"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> {{lang ? "点击登录 " : "Log In"}}</button>
+  <view  class='userinfo' wx:else>
+    <block >
+      <image bindtap="bindViewTap" src="{{api + auth.image}}" background-size="cover" class='userimg' bindtap='gomine'></image>
+      <!-- <view class='userimg_line'></view> -->
+      <view class='square'><view class='row' wx:for="{{4}}" wx:key=""></view><view class='col' wx:for='{{4}}' wx:key=""></view></view>
+      <text class='username'>{{auth.username}} {{lang ? "在这里，爱上冰球" : ",Let’s GoHockey！"}}</text>
+    </block>
+  </view>
+</view>
+
+<!-- 选择冰场 -->
+<view class='rink'>
+  <view class='rink_title'>
+    <view wx:if="{{lang}}"><view class='rectangle'></view><text class='bold'>合作冰场</text></view>
+    <view wx:else><view class='rectangle'></view><text>Select ice rink</text></view>
+  </view>
+  <view class='rink_pic clearfix'>
+    <view class='rink_img fl' wx:for="{{index_space}}" wx:key="" data-id="{{item.id}}" data-cityid="{{item.city_id}}" wx:if="{{index<9}}">
+       <image src='http://cdn.xiaochengxu.gogohockey.com{{item.images}}'></image> 
+      <view class='rink_line'></view> 
+      <text class='rink_text' wx:if="{{lang}}">{{item.name}}</text>
+      <text class='rink_text' wx:else>{{item.en_name}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部进入 -->
+<view class='enter {{isiphx? "iphx":""}}'>
+  <view class='link' bindtap='gocourse' data-id="{{rink_id}}" data-cityid="{{cityid}}">
+    <text wx:if="{{lang}}">进入</text>
+    <text wx:else>Enter</text>
+  </view>
+</view>
+

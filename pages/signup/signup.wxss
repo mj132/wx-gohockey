@@ -1,0 +1,139 @@
+/* pages/signup/signup.wxss */
+.input{
+     width: 400rpx;
+}
+.signup{
+  padding-left: 72rpx;
+  margin-top: 50rpx;
+}
+.sign_title image{
+  width: 180rpx;
+  height: 95rpx;
+  margin-right: 60rpx;
+  vertical-align: bottom;
+}
+.tit{
+  width: 438rpx;
+  margin-top: -16rpx;
+}
+.tit .t{
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 50rpx;
+  color: #2984FF;
+}
+.tit .b{
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: #14144A;
+  font-weight: bold;
+}
+
+.form{
+  margin-top: 30rpx;
+}
+.form input{
+  margin-left: 40rpx;
+}
+.form>view{
+  height: 72rpx;
+  line-height: 52rpx;
+  font-size: 30rpx;
+  color: #14144A;
+  padding-bottom: 20rpx;
+  border-bottom: 6rpx solid #2984FF;
+  margin-top: 40rpx;
+}
+.form .protector .icon{
+  width: 46rpx;
+  height: 46rpx;
+  background: url('https://xiaochengxu.gogohockey.com/img/icon_selected.png') no-repeat;
+  background-size: contain;
+}
+.form .protector .icon.tog{
+  background-image: url('https://xiaochengxu.gogohockey.com/img/icon_default.png');
+}
+.form .protector{
+  padding-right: 60rpx;
+}
+.form .protector .free{
+    padding-left: 10rpx;
+    color:  #CBD2D9;
+}
+.form .need{
+  margin-bottom: 20rpx;
+}
+.form .need .select>view{
+  width: 226rpx;
+}
+.form .need .select .height{
+  padding-left: 20rpx;
+}
+.form .need .picker{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #CBD2D9;
+  margin-left: 6rpx; 
+}
+.form .need .trangle{
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  background: url('https://xiaochengxu.gogohockey.com/img/icon_moreoption.png') no-repeat 0 8rpx;
+  background-size: contain;
+  vertical-align: middle;
+  margin-left: 8rpx;
+}
+.form .remark{
+  width: 580rpx;
+  height: 180rpx;
+  padding: 20rpx 28rpx;
+  background: #E7F3FF;
+  margin-left: 36rpx;
+  font-size: 30rpx;
+}
+.form .submit{
+  position: relative; 
+  width: 100%;
+  height: 140rpx;
+  border: none;
+  margin-top: 200rpx;
+}
+.form .read{
+  width: 340rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #003600; 
+  line-height: 34rpx;
+}
+.form .read .true{
+  display: inline-block;
+  width: 24rpx;
+  height: 32rpx;
+  background: url('https://xiaochengxu.gogohockey.com/img/icon_fileunread.png') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.form .read .true.read{
+  background-image: url('https://xiaochengxu.gogohockey.com/img/icon_filesread.png');
+}
+.form .read .safe{
+  color: #2984FF;
+  margin-left: 10rpx;
+}
+.form .submit button{
+  width: 340rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  color: #fff;
+  background: #2984FF;
+  border-radius: 200rpx;
+  margin-top: 20rpx;
+}
+
+.form .sex .radio{
+  margin-left: 40rpx;
+}

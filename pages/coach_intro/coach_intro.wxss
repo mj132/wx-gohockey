@@ -1,0 +1,108 @@
+/* pages/coach_intro/coach_intro.wxss */
+
+.coach_intro{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 22rpx;
+}
+
+.asideline{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 13rpx;
+  width: 8rpx;
+  background: #2984FF;
+}
+
+.coachinfo {
+  position: relative;
+  width: 100%;
+  height: 248rpx;
+}
+.userimg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -80rpx;
+  margin-left: -80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 6rpx solid #C42703;
+  z-index: 99;
+}
+
+.username{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #14144A;
+  bottom: 0;
+  font-size: 30rpx;
+  line-height: 44rpx;
+}
+.coach_left,.coach_right{
+  position: absolute;
+  top: 50%;
+  margin-top: -25rpx;
+  width: 51rpx;
+  height: 51rpx;
+  background: url('https://xiaochengxu.gogohockey.com/img/icon_left.png') no-repeat;
+  background-size: contain;
+}
+.coach_left{
+  left: 60rpx;
+}
+.coach_right{
+  right: 60rpx;
+  background: url('https://xiaochengxu.gogohockey.com/img/icon_right.png') no-repeat 20rpx 0;
+  background-size: contain;
+}
+
+.coach_int{
+  position: relative;
+  margin-top: 40rpx;
+}
+.intro_title{
+  font-size: 30rpx;
+  color: #14144A;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.intro_title .block{
+  display: inline-block;
+  width: 20rpx;
+  height: 32rpx;
+  background: #14144A;
+  vertical-align: middle; 
+  margin-right: 12rpx;
+}
+.intro_title text{
+  font-size: 30rpx;
+  color: #14144A;
+  vertical-align: middle;
+}
+.intro_text{
+  font-size: 28rpx;
+  color: #14144A;
+  margin: 30rpx 54rpx 40rpx 32rpx;
+}
+.intro_text image,.intro_text video{
+  width: 664rpx!important;
+}
+.intro_img{
+  width: 700rpx;
+  height: 300rpx;
+  margin-bottom: 60rpx;
+}
+.intro_img image{
+  width: 100%;
+  height: 300rpx;
+}
+.wxParse-img{
+  width: 660rpx;
+  height: 300rpx;
+  margin-bottom: 60rpx;
+}

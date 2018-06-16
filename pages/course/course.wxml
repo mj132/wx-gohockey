@@ -1,0 +1,89 @@
+<!--pages/course/course.wxml-->
+<import src="../../template/bottom.wxml" />
+
+
+<view class='course'>
+  <!-- 上面下拉 -->
+  <view class='top_select'>
+    <view class='address'>
+      <!-- <picker class='clearfix' bindchange="lanChange" value="{{lan_index}}" range="{{lan_list}}">
+        
+        <view class="picker" >
+          {{lan_list[lan_index]}}
+        </view>
+      </picker> -->
+      <view class="picker" bindtap='lanChange'>
+          {{lan_list[lan_index]}}
+        </view>
+    </view>
+    <view class='rink clearfix'>
+      <view class='r'>
+        <picker class='clearfix' bindchange="addressChange" range-key='name' value="{{add_index}}" range="{{city_list}}"  wx:if="{{language}}">
+          <view class='rink_text fl bold'>{{city_list[add_index].name}}</view>
+          <image src='http://cdn.xiaochengxu.gogohockey.com/img/icon_moreoption.png' class='fl'></image>
+        </picker>
+         
+        <picker class='clearfix' bindchange="addressChange" range-key='en_name' value="{{add_index}}" range="{{city_list}}"  wx:else>
+          <view class='rink_text fl bold'>{{city_list[add_index].en_name}}</view>
+          <image src='http://cdn.xiaochengxu.gogohockey.com/img/icon_moreoption.png' class='fl'></image>
+        </picker>
+      </view>
+      
+    </view>
+  </view>
+
+  <!-- 日历 -->
+  <view class='calendar'>
+    <view class="calendar_show">
+      <view class="calendar_title">WEEKLY  SCHEDULE</view>
+      <view class='calendar_year'>{{year}} {{month}}</view>
+      <view class='calendar_date clearfix' >
+        <view wx:for="{{date}}" class='fl {{item.d == date_curr? "curr":""}}' wx:key="" data-y="{{item.y}}" data-d='{{item.d}}' bindtap='dateChange'>{{item.d}}</view>
+      </view>
+      <view class='calendar_week'>
+        <view wx:if="{{language}}">
+          <view wx:for="{{week_cn}}" class='fl week' wx:key="" >{{item}}</view>
+        </view>
+        <view wx:else>
+          <view wx:for="{{week_en}}" class='fl week' wx:key="" >{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 课程报名 -->
+   <!-- 没有课程 -->
+  <view class='nocourse'  wx:if="{{!course_list}}" bindtouchstart='tstart' bindtouchend='tend' data-dis='{{date[1].d}}'>
+    <text wx:if="{{language}}">今日暂无课程安排</text>
+    <text wx:else>No Class Schedule For Today</text>
+  </view>
+  <view class='course_reg  {{isiphx? "iphx1":""}}' wx:else bindtouchstart='tstart' bindtouchend='tend' data-dis='{{date[1].d}}'>
+    <view class='course' wx:for="{{course_list}}" wx:key="{{id}}" bindtap='gocourse_detail' data-id='{{item.course_id}}' data-timeid="{{item.id}}" data-date="{{myDate}}" data-over="{{item.is_over}}"> 
+      <view class='time'>{{item.start_time}}-{{item.end_time}}</view>
+      <view class='course_title bold' wx:if="{{language}}">
+        {{item.course_title}}
+      </view>
+      <view class='course_title bold' wx:else>
+        {{item.course_en_title}}
+      </view>
+      <view class='coach'>
+        <text class='coach_name' wx:if="{{language}}">{{item.space_name}}</text>
+        <text class='coach_name' wx:else>{{item.space_en_name}}</text>
+        <text class='coach_num'>{{item.book_count? item.book_count:0}}/{{item.number}}</text>
+      </view>
+      <view class='user' wx:if="{{item.booking}}">
+        <image src="https://xiaochengxu.gogohockey.com{{bookinguser.image}}" background-size="cover" class='userimg'  wx:for="{{item.booking}}" wx:for-item="bookinguser" wx:key="" wx:if="{{index<6}}"></image>
+      </view>
+      <view style='display: {{item.is_full? "none":"block"}}' class='signup {{item.is_over? "over":""}}' catchtap='{{item.if_book || item.is_over || (item.if_exp==1 && exper)? "":"gosignup"}}' wx:if="{{language}}" data-id='{{item.course_id}}' data-timeid="{{item.id}}" data-date="{{myDate}}">报名</view>
+      <view style='display: {{item.is_full? "none":"block"}}' class='signup {{item.is_over? "over":""}}' catchtap='{{item.if_book || item.is_over? "":"gosignup"}}' wx:else data-id='{{item.course_id}}' data-timeid="{{item.id}}" data-date="{{myDate}}">Sign Up</view>
+      <view style='display: {{item.is_full? "block":"none"}}' class='signup full' wx:if="{{language}}">满员</view>
+      <view style='display: {{item.is_full? "block":"none"}}' class='signup full' wx:else>Full Staff</view>
+
+      
+    </view>
+  </view>
+ 
+</view>
+<!--客服按钮  -->
+<button class='contact' open-type='contact' style='background: url({{res}}contact.png) no-repeat #ffffff; background-size: 50rpx 50rpx;background-position: center'></button>
+<template is="bottom" data="{{data:'course',language: language,isiphx: isiphx}}" />  

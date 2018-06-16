@@ -1,0 +1,182 @@
+/* pages/course_detail/course_detail.wxss */
+.course_detail{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 60rpx;
+}
+.asideline{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 13rpx;
+  width: 8rpx;
+  background: #2984FF;
+}
+
+.my_sign{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 112rpx;
+  background: #FFF;
+  box-shadow: 0 0 4px 0 rgba(39,135,255,0.20);
+  z-index: 99;
+}
+.my_sign .sign{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -41rpx;
+  margin-left: -170rpx; 
+  width: 340rpx;
+  height: 82rpx;
+  background-color: #2984FF;
+  border-radius: 200rpx;
+  font-size: 32rpx;
+  color: #FFF;
+  line-height: 82rpx;
+  text-align: center;
+}
+
+.course_img{
+  position: relative;
+}
+.course_img image{
+  width: 700rpx;
+  height: 300rpx;
+}
+.course_img .bg{
+  position: absolute;
+  left: 0;
+  bottom: -30rpx;
+  padding-top: 76rpx;
+  width: 296rpx;
+  height: 136rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 34rpx;
+  background: url('https://xiaochengxu.gogohockey.com/img/bg_classtime.png') no-repeat;
+  background-size: contain;
+}
+
+.course_des{
+  padding-left: 32rpx;
+  padding-right: 50rpx;
+}
+.title{
+  margin-top: 70rpx;
+}
+.title .tit{
+  line-height: 54rpx;
+  font-size: 36rpx;
+  color: #2984FF;
+}
+.title .price{
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 50rpx;
+  color: #14144A;
+}
+
+.address{
+  margin-top: 10rpx;
+}
+.address_tit,.content_tit{
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #14144A;
+  margin-bottom: 4rpx;
+}
+.address_des{
+  height: 46rpx;
+  line-height: 46rpx;
+  font-size: 24rpx;
+  color: #14144A;
+}
+.content{
+  margin-top: 28rpx;
+}
+.content_des{
+  width: 668rpx;
+  font-size: 24rpx;
+  color: #14144A;
+  line-height: 40rpx;
+}
+.content_des image{
+  width: 668rpx!important;
+}
+.content_des .wxParse-ol{
+    width: 668rpx!important;
+}
+
+.location{
+  /* position: relative; */
+  width: 100%;
+  padding-bottom: 150rpx;
+
+  /* height: 300rpx; */
+  margin-top: 44rpx; 
+  padding-left:32rpx;
+  padding-right:50rpx;
+}
+.location map{
+  width: 100%;
+  height: 300rpx;
+}
+/* .location .arrow{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background: url('https://xiaochengxu.gogohockey.com/img/icon_navigation.png') no-repeat;
+  background-size: contain;
+} */
+
+.signup{
+  margin: 40rpx 0 0;
+}
+.signup_tit{
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  color: #14144A;
+  font-weight: bold;
+  margin-bottom: 24rpx;
+}
+.signup_user image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  margin-bottom: 28rpx;
+}
+.signup_user image:nth-child(9n){
+  margin-right: 0;
+}
+.huiyuan{
+     position: absolute;
+     top: 430rpx;
+     right: 50rpx;
+     font-size: 26rpx;
+     color: #2984FF;
+}
+.huiyuan-big{
+     right: 50rpx;
+}
+.huiyuan-en{
+     position: absolute;
+     top: 480rpx;
+     right: 50rpx;
+     font-size: 26rpx;
+     color: #2984FF;
+}
+.huiyuan-en-big{
+
+}

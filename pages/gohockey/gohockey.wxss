@@ -1,0 +1,97 @@
+/* pages/gohockey/gohockey.wxss */
+.go_logo{
+  padding: 16rpx 0 40rpx 32rpx;
+}
+.go_logo image{
+  width: 94rpx;
+  height: 50rpx;
+}
+
+.swiper{
+  padding: 0 32rpx 50rpx;
+  display: block;
+}
+.swiper .swiper_img{
+  width: 686rpx;
+  height: 300rpx;
+  border-radius: 10rpx;
+} 
+
+.coach{
+  padding: 0 0 60rpx;
+}
+.coach_title>view,.find_title>view{
+  position: relative;
+}
+.coach_title .rectangle,.find_title .rectangle{
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  width: 14rpx;
+  height: 32rpx;
+  background-color: #14144A;  
+}
+.coach_title text,.find_title text{
+  margin-left: 33rpx;
+  height: 56rpx;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  letter-spacing: 2rpx;
+}
+.coach .coach_scroll{
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+}
+.coach .coach_list{
+  display: inline-block;
+  width: 160rpx;
+  margin: 28rpx 30rpx 0          ;
+}
+.coach_list image{
+  width: 160rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+}
+.coach_line{
+  width: 100rpx;
+  height: 8rpx;
+  margin: 18rpx 0 10rpx;
+  background: #2984FF;
+}
+.coach_name{
+  font-size: 30rpx;
+  color: #14144A;
+  letter-spacing: 1.9rpx;
+  margin-bottom: 6rpx;
+}
+.coach_des{
+  width: 160rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 20rpx;
+  color: #50638F;
+}
+
+.find{
+  padding-bottom: 100rpx;
+}
+.find .find_title{
+  margin-bottom: 28rpx;
+}
+.find_list{
+  padding: 0 32rpx;
+}
+.find_list image{
+  width: 686rpx;
+  border-radius: 10rpx;
+}
+.find_list .list_title{
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 30rpx;
+  color: #14144A;
+  letter-spacing: 1.9rpx;
+  margin: 26rpx 0 60rpx;
+}

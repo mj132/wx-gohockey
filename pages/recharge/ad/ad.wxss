@@ -1,0 +1,23 @@
+.title {
+     width: 686rpx;
+     margin: 0 auto;
+     font-size: 36rpx;
+     font-weight: bold;
+}
+
+.content-ad {
+     /* font-size: 28rpx; */
+     width: 686rpx;
+     margin: 30rpx auto;
+     display: block;
+     /* text-align: left; */
+}
+
+.content-ad view {
+     width: 686rpx!important;
+      text-align: left!important; 
+}
+.content-ad image{
+     display: block;
+     width: 100%!important;
+}

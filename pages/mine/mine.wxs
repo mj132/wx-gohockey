@@ -1,0 +1,15 @@
+//价钱小数点后面加几位小数
+var filters = {
+    toFix: function (value, count) {
+        if (value.indexOf('+') != -1){
+            return value;
+        }else{
+            var num =  parseFloat(value);
+            return num.toFixed(count)
+        }
+    }
+}
+
+module.exports = {
+    toFix: filters.toFix
+}

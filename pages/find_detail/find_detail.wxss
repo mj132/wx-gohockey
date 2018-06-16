@@ -1,0 +1,39 @@
+/* pages/find_detail/find_detail.wxss */
+.find_detail{
+  margin-top: 40rpx;
+}
+.find_detail>image{
+  width: 100%;
+  height: 440rpx;
+}
+.find_cont{
+  padding: 28rpx 30rpx 0 32rpx;
+}
+.find_title{
+  font-size: 32rpx;
+  color: #14144A;
+  font-weight: bold;
+} 
+.find_msg{
+  font-size: 24rpx;
+  color: #6F839C;
+  margin-top: 25rpx;
+  margin-bottom: 28rpx;
+}
+.find_msg .date{
+  margin-right: 40rpx;
+}
+/* .find_text .wxParse-inline{
+  height: 52rpx!important;
+  line-height: 52rpx!important;
+  font-size: 28rpx!important;
+  color: #14144A!important;
+  font-weight: normal!important;
+} */
+.find_text .wxParse-p{
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
+.find_text image{
+  width: 688rpx!important;
+}

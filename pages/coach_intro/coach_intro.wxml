@@ -1,0 +1,51 @@
+<!--pages/coach_intro/coach_intro.wxml-->
+<import src="../../wxParse/wxParse.wxml" /> 
+
+<view class='coach_intro'>
+ 
+
+  <!-- 教练信息 -->
+  <view  class='coachinfo'>
+    <image bindtap="bindViewTap" src="http://cdn.xiaochengxu.gogohockey.com{{coach_list[index].image}}" background-size="cover" class='userimg'></image>
+    <view class='square'><view class='row' wx:for="{{4}}" wx:key=""></view><view class='col' wx:for='{{4}}' wx:key=""></view></view>
+    <text class='username' wx:if="{{language}}">教练 {{coach_list[index].title}}</text>
+    <text class='username' wx:else>{{coach_list[index].en_title}}</text>
+    <!-- 左右按钮 -->
+    <view class='coach_left' bindtap='goleft'></view>
+    <view class='coach_right' bindtap='goright'></view>
+  </view>
+
+  <view class='coach_int'>
+    <!-- 侧边线 -->
+    <view class='asideline'></view>
+    
+    <view class='intro_title'>
+      <view class='block'></view>
+      <text wx:if="{{language}}">教练介绍</text>
+      <text wx:else>Coach Introduction</text>
+    </view>
+    <view class='intro_text' wx:if="{{language}}">
+      <template is="wxParse" data="{{wxParseData:coachintro.nodes}}"/>
+    </view>
+    <view class='intro_text' wx:else>
+      <template is="wxParse" data="{{wxParseData:coachen.nodes}}"/>
+    </view>
+    <!-- <view class='intro_img'><image src='http://cdn.xiaochengxu.gogohockey.com{{coach_list[index].image}}'></image></view> -->
+
+    <!-- <view class='intro_title'>
+      <view class='block'></view>
+      <text wx:if="{{language}}">职业成就</text>
+      <text wx:else>Professional achievement</text>
+    </view>
+    <view class='intro_text' wx:if="{{language}}">帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述</view>
+    <view class='intro_text' wx:else>Description of the postDescription of the postDescription of the postDescription of the postDescription of the post</view>
+
+    <view class='intro_title'>
+      <view class='block'></view>
+      <text wx:if="{{language}}">最佳成绩</text>
+      <text wx:else>Best result</text>
+    </view>
+    <view class='intro_text' wx:if="{{language}}">帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述帖子的描述</view>
+    <view class='intro_text' wx:else>Description of the postDescription of the postDescription of the postDescription of the postDescription of the post</view> -->
+  </view>
+</view>

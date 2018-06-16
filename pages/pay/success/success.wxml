@@ -1,0 +1,24 @@
+<!--pages/pay/success/success.wxml-->
+
+<view class='pay'>
+  <view class='sign_title clearfix'>
+    <image src='http://cdn.xiaochengxu.gogohockey.com/img/img_pay.png' class='fl'></image>
+    <view class='tit fl'>
+      <view class='t' wx:if="{{language}}">支付成功</view>
+      <view class='t' wx:else>payment successful</view>
+      <view class='b' wx:if="{{language}}">{{userInfo.nickName}} 一会见！</view>
+      <view class='b' wx:else>{{userInfo.nickName}} See you soon!</view>
+    </view>
+  </view>
+  <view class='text'>
+    <view wx:if="{{language}}">已为你完成报名，并安排好课程。</view>
+    <view wx:else>You have completed your registration and arranged your course.</view>
+    <view wx:if="{{language}}">请提前45分钟到达冰场进行准备工作。</view>
+    <view wx:else>Please arrive at the ice rink 45 minutes in advance for preparation.</view>
+    <view wx:if="{{language}}">开课前90分钟可申请取消。</view>
+    <view wx:else>90 minutes before the start of class can apply for cancellation.</view>
+  </view>
+</view>
+
+<button wx:if="{{language}}" bindtap='gocourse'>我知道了</button>
+<button wx:else bindtap='gocourse'>我知道了</button>

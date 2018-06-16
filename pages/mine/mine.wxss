@@ -1,0 +1,279 @@
+/* pages/mine/mine.wxss */
+.top_user .user_head{
+  position: relative;
+  width: 100%;
+  height: 192rpx;
+  margin-top: 20rpx;
+}
+.top_user .userimg {
+  position: absolute;
+  left: 50%;
+  top: 20rpx;
+  margin-left: -80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 6rpx solid #C42703;
+  z-index: 99;
+}
+.top_user .username{
+  font-size: 40rpx;
+  color: #14144A;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.topbar>view{
+  position: relative;
+  height: 44rpx;
+  width: 80rpx;
+  font-size: 32rpx;
+  color: #14144A;
+  line-height: 44rpx;
+  margin-left: 90rpx; 
+  text-align: center;
+}
+.topbar>view:first-child{
+   margin-left: 170rpx; 
+}
+.topbar>view.active::after{
+  content: '';
+  width: 100%;
+  height: 8rpx;
+  position: absolute;
+  left: 0;
+  bottom: -32rpx;
+  background-color: #2984FF;
+}
+.bar_line{
+  width: 680rpx;
+  margin-left: 36rpx;
+  margin-top: 24rpx;
+  height: 8rpx;
+  background: #C7E4FF;
+}
+
+.course_reg{
+  padding: 0 70rpx 0 72rpx;
+  height: 800rpx;
+}
+.course_reg .course{
+  position: relative;
+  width: 608rpx;
+  height: 220rpx;
+  margin-bottom: 32rpx;
+  background: url(http://xiaochengxu.gogohockey.com/img/bg_classes.png) no-repeat;
+  background-size: 100% 100%;
+}
+.course_reg .booking{
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 34rpx;
+}
+.course .time{
+  width: 100%;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  color: #fff; 
+  text-align: center;
+}
+.course_title{
+  line-height: 34rpx;
+  font-size: 28rpx;
+  color: #14144A;
+  letter-spacing: 1.86rpx;
+  text-align: center;
+  margin-top: 18rpx;
+}
+.coach{
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #50638F;
+  letter-spacing: 1.4rpx;
+  margin-top: 6rpx;
+}
+.coach .coach_name{
+  margin-right: 20rpx;
+}
+.user{
+  margin-top: 12rpx;
+  text-align: center;
+}
+.user image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin: 0 10rpx;
+}
+.signup{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -22rpx;
+  width: 100rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #fff;
+  background: #2984FF;
+  border-radius: 100px;
+}.course_reg{
+  padding: 0 70rpx 0 72rpx;
+}
+.course_reg .course{
+  position: relative;
+  width: 608rpx;
+  height: 220rpx;
+  margin-top: 28rpx;
+  background: url(http://xiaochengxu.gogohockey.com/img/bg_classordered.png) no-repeat;
+  background-size: 100% 100%;
+}
+.course .time{
+  width: 100%;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  color: #fff; 
+  text-align: center;
+}
+.course_title{
+  line-height: 34rpx;
+  font-size: 28rpx;
+  color: #14144A;
+  letter-spacing: 1.86rpx;
+  text-align: center;
+  margin-top: 18rpx;
+}
+.coach{
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #50638F;
+  letter-spacing: 1.4rpx;
+  margin-top: 6rpx;
+}
+.coach .coach_name{
+  margin-right: 20rpx;
+}
+.whether{
+  width: 140rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #fff;
+  background: #2984FF;
+  border-radius: 8rpx;
+  margin-top: 22rpx;
+  margin-left: 140rpx;
+}
+.pub{
+  position: absolute;
+  bottom: 20rpx; 
+  left: 50%;
+  margin-left: -70rpx;
+  width: 140rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 8rpx;
+}
+.finish{
+  background: #C7E4FF;
+}
+
+.cancel{
+  margin-left: 60rpx;
+}
+#mine_bottom{
+  padding-bottom: 110rpx;
+}
+
+.rank{
+  margin-top: 60rpx;
+  padding: 0 35rpx;
+}
+.rank .rank_list{
+  width: 100%;
+  margin-bottom: 28rpx;
+}
+.rank .rank_progress{
+  border-radius: 8rpx;
+  overflow:hidden;
+  margin-bottom: 14rpx;
+}
+.rank .rank_user{
+  height: 45rpx;
+  line-height: 45rpx;
+}
+.rank .user_id{
+  font-size: 30rpx;
+  color: #2984FF;
+}
+.rank .userimg{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin: 0 16rpx 0 20rpx;
+}
+.rank .username{
+  font-size: 30rpx;
+  color: #14144A;
+}
+.rank .user_finish{
+  font-size: 24rpx;
+  color: #14144A;
+}
+
+
+.balance_p{
+  padding: 40rpx 40rpx 0 32rpx;
+  height: 760rpx;
+}
+.account text{
+  font-size: 22rpx;
+  color: #50638F;
+  margin-left: 192rpx;
+}
+.account .acc_re{
+  width: 506rpx;
+  height: 106rpx;
+  font-size: 25px;
+  line-height: 106rpx;
+  font-weight: 550; 
+  text-align: center;
+  color: #2984FF;
+  margin-top: 12rpx;
+  background: url('http://xiaochengxu.gogohockey.com/img/bg_wallet.png');
+  background-size: contain;
+}
+.pay{
+  width: 136rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #2984FF;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 100px;
+  margin: 80rpx 0 0 32rpx;
+}
+.balance_log{
+  width: 514rpx;
+}
+.log{
+  margin-top: 28rpx;
+}
+.log text{
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  color: #50638F;
+}

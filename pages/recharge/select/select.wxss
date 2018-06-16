@@ -1,0 +1,82 @@
+/* pages/recharge/select/select.wxss */
+.select{
+  padding-left: 72rpx;
+  margin-top: 100rpx;
+}
+
+.sign_title{
+  padding-bottom: 64rpx;
+  border-bottom: 6px solid #2984FF;
+}
+.sign_title image{
+  width: 180rpx;
+  height: 95rpx;
+  margin-right: 60rpx;
+  vertical-align: bottom;
+}
+.tit{
+  margin-top: -16rpx;
+}
+.tit .t{
+  width: 438rpx;
+  line-height: 72rpx;
+  font-size: 50rpx;
+  color: #2984FF;
+}
+.tit .b{
+  width: 438rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: #14144A;
+  font-weight: bold;
+}
+
+.money{
+  margin-top: 100rpx;
+   margin-left: 30rpx; 
+  width: 260rpx;
+  float: left
+}
+.money .list{
+  /* margin-left: 28%; */
+  width: 260rpx;
+  height: 86rpx;
+  border-radius: 200rpx;
+  text-align: center;
+  margin-bottom: 48rpx;
+  border: 1px solid #50638F;
+}
+.list .t{
+  line-height: 42rpx;
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.list .b{
+  line-height: 20rpx;
+  font-size: 20rpx;
+}
+.money .list.curr{
+  background: #50638F;
+}
+.list.curr .t{
+  color: #FFFFFF;
+}
+.list.curr .b{
+  color: #FFFFFF;
+}
+
+button{
+  margin-left: 29%;
+  width: 340rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  color: #fff;
+  background: #2984FF;
+  border-radius: 200rpx;
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+}
+.ad-img{
+     padding-bottom: 80rpx;
+}

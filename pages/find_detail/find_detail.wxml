@@ -1,0 +1,22 @@
+<!--pages/find_detail/find_detail.wxml-->
+<import src="../../wxParse/wxParse.wxml" /> 
+
+<view class='find_detail'>
+  <image src='http://cdn.xiaochengxu.gogohockey.com{{detail.image}}'></image>
+  <view class='find_cont'>
+    <view class='find_title' wx:if="{{language}}">{{detail.title}}</view>
+    <view class='find_title' wx:else>{{detail.en_title}}</view>
+    <view class='find_msg'>
+      <text class='date' wx:if="{{language}}">{{ctime}}</text>
+      <text class='date' wx:else>{{en_ctime}}</text>
+       <text class='author' wx:if="{{language}}">浏览量：{{detail.view}}</text>
+      <text class='author' wx:else>View：{{detail.view}}</text> 
+    </view>
+    <view class='find_text' wx:if="{{language}}">
+       <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+    </view>
+    <view class='find_text' wx:else>
+      <template is="wxParse" data="{{wxParseData:article_en.nodes}}"/> 
+    </view>
+  </view>
+</view>

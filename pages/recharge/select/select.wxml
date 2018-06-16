@@ -1,0 +1,34 @@
+<view class='select'>
+     <view class='sign_title clearfix'>
+          <image src='http://cdn.xiaochengxu.gogohockey.com/img/img_pay.png' class='fl'></image>
+          <view class='tit fl'>
+               <view class='t' wx:if="{{language}}">购买冰球次卡</view>
+               <view class='t' wx:else>Buy Membership Card</view>
+               <view class='b' wx:if="{{language}}">享受会员福利</view>
+               <view class='b' wx:else>Get Member Benefits</view>
+          </view>
+     </view>
+
+     <view class='money'>
+          <view class='list {{sel_index == index? "curr":""}}' wx:for="{{sel}}" wx:if="{{item.type == 1}}" wx:key="" data-id="{{index}}" bindtap='sel_money'>
+               <view class='t'>￥{{item.price}}</view>
+               <view class='b' wx:if='{{language}}'>{{item.name}}</view>
+               <view class='b' wx:else>{{item.en_name}}</view>
+          </view>
+     </view>
+     <view class='money'>
+          <view class='list {{sel_index == index? "curr":""}}' wx:for="{{sel}}" wx:if="{{item.type == 2}}" wx:key="" data-id="{{index}}" bindtap='sel_money'>
+               <view class='t'>￥{{item.price}}</view>
+               <view class='b' wx:if='{{language}}'>{{item.name}}</view>
+               <view class='b' wx:else>{{item.en_name}}</view>
+          </view>
+     </view>
+</view>
+<button wx:if="{{language}}" bindtap='gopay'>支付</button>
+<button wx:else bindtap='gopay'>Pay</button>
+
+<!-- 轮播 -->
+<view bindtap='gourl' class='ad-img'>
+     <image src="http://cdn.xiaochengxu.gogohockey.com{{adImage[0].image}}" class="slide_img " mode='widthFix'  style='width: 686rpx;height: 350rpx;border-radius: 10rpx;display:block;margin: 0 auto 0rpx auto' />
+     <!-- <view style='width: 686rpx; margin:0 auto;font-size: 30rpx;color: #14144A'>{{adImage[0].title}}</view> -->
+</view>

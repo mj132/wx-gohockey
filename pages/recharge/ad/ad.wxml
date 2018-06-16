@@ -1,0 +1,5 @@
+<import src="../../../wxParse/wxParse.wxml" /> 
+<view class="title">{{lang ? ad.title : ad.en_title}}</view>
+ <view class='content-ad' > 
+     <template is="wxParse" data="{{wxParseData: lang ? content.nodes : en_content.nodes, type: 1}}" />
+ </view> 

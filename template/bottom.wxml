@@ -1,0 +1,10 @@
+<template name="bottom">
+  <!--底部  -->
+  <view class="coursebottom {{isiphx? 'iphx':''}}">
+    <view class="course {{data=='course'?'current':''}}" bindtap="gocourse" wx:if='{{language}}'>课 程</view>
+    <view class="course {{data=='course'?'current':''}}" bindtap="gocourse" wx:else>Course</view>
+    <view class="gohockey  {{data=='gohockey'?'current':''}}" bindtap="gogohockey"></view>
+    <view class="mine  {{data=='mine'?'current':''}}" bindtap="gomine" wx:if='{{language}}'>我 的</view>
+    <view class="mine  {{data=='mine'?'current':''}}" bindtap="gomine" wx:else>Mine</view>
+  </view>
+</template>

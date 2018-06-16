@@ -1,0 +1,74 @@
+<!--pages/course_detail/course_detail.wxml-->
+<import src="../../wxParse/wxParse.wxml" /> 
+
+<view class='course_detail'>
+  <!-- 侧边线 -->
+  <view class='asideline'></view>
+
+  <!-- 我要报名 -->
+  <view class='my_sign {{isiphx? "iphx":""}}' wx:if="{{if_book}}">
+    <button class='sign' disabled wx:if="{{language}}">已报名</button>
+    <button class='sign' disabled wx:else>Registered</button>
+  </view>
+  <view class='my_sign {{isiphx? "iphx":""}}' wx:elif="{{detail.is_full}}">
+    <button class='sign' disabled wx:if="{{language}}">已满员</button>
+    <button class='sign' disabled wx:else>Full</button>
+  </view>
+  <view class='my_sign {{isiphx? "iphx":""}}' wx:else style='display: {{over==1 || (detail.if_exp == 1 && exper)? "none":"block"}}'>
+    <button class='sign' bindtap='gosignup' wx:if="{{language}}" data-id='{{course_id}}' data-timeid="{{time_id}}" data-date="{{myDate}}">我要报名</button>
+    <button class='sign' bindtap='gosignup' wx:else data-id='{{course_id}}' data-timeid="{{time_id}}" data-date="{{myDate}}">Sign Up</button>
+  </view>
+
+  <view class='course_img'>
+    <image src='http://cdn.xiaochengxu.gogohockey.com{{detail.image}}'></image>
+    <view class='bg'>{{detail.course_starttime}} - {{detail.course_endtime}}</view>
+  </view>
+
+  <view class='course_des clearfix'>
+    <view class='title'>
+      <text class='tit' wx:if="{{language}}">{{detail.title}}</text>
+      <text class='tit' wx:else>{{detail.en_title}}</text>
+      <!-- <text class='price fr'>￥{{detail.price}}</text>
+      <text class='huiyuan {{isBig ? "huiyuan-big" : ""}}' wx:if="{{detail.if_exp == 0 && language}}">{{"会员价 < 150.00"}} </text>
+      <text class='huiyuan-en {{isBig ? "huiyuan-big" : ""}}' wx:if="{{detail.if_exp == 0 && !language}}">{{"VIP Get 30% off"}} </text> -->
+    </view>
+    <!-- 已报名人 -->
+    <view class='signup'>
+      <view class='signup_tit'  wx:if="{{language}}">已报名学员</view>
+      <view class='signup_tit' wx:else>Registered Members</view>
+      <view class='signup_user' wx:if="{{bookinguser}}">
+        <image src="http://cdn.xiaochengxu.gogohockey.com{{item.image}}" background-size="cover" wx:for="{{bookinguser}}" wx:key=""></image>
+      </view>
+    </view>
+    <view class='address'>
+      <view class='address_tit' wx:if="{{language}}">地点</view>
+      <view class='address_tit' wx:else>Location</view>
+      <view class='address_des' wx:if="{{language}}">{{space.address}}</view>
+      <view class='address_des' wx:else>{{space.en_address}}</view>
+    </view> 
+    <view class='content'>
+      <!-- <view class='content_tit' wx:if="{{language}}">课程要点</view>
+      <view class='content_tit' wx:else>Course Highlights</view> -->
+      <view class='content_des' wx:if="{{language}}">
+        <template is="wxParse" data="{{wxParseData:description.nodes}}"/>
+      </view>
+      <view class='content_des' wx:else>
+        <template is="wxParse" data="{{wxParseData:en_description.nodes}}"/>
+      </view>
+    </view>
+  </view>
+
+  <!-- 获取位置 -->
+    <view class='location {{isiphx? "iphx3":""}}'>
+      <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" bindmarkertap='openlocation' show-location bindtap='openlocation' wx:if="{{hasmarkers}}">
+        
+      </map>
+      <!-- <view class='arrow'></view> -->
+    </view>
+    <!-- <view class='location' wx:else>
+      <image src='http://cdn.xiaochengxu.gogohockey.com{{space.en_map}}' mode='widthFix'></image>
+      
+    </view> -->
+
+    
+</view>
